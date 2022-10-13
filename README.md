@@ -1,5 +1,12 @@
 ## Comandos
 
+Sí usted va a usar Docker, utilice el siguiente comando:
+
+> docker-compose up
+
+Y esto le instalará y le cargará todo lo necesario para abrir un servidor
+web en el puerto 3000.
+
 > npm run init
 
 Inserta datos iniciales en las tablas.
