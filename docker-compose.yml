@@ -1,0 +1,38 @@
+version: "3.9"
+services:
+  database:
+    image: postgres
+    restart: always
+    # network_mode: bridge
+    command: -p 5433
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: abc123abc
+      POSTGRES_DB: db_hotels
+    expose:
+      - "5433" # Publishes 5433 to other containers but NOT to host machine
+    ports:
+      - 5433:5433
+    healthcheck:
+      test: [ "postgres", "-V" ]
+      interval: 40s
+      timeout: 30s
+      retries: 2
+      start_period: 30s
+    networks:
+      - default
+
+  app:
+    image: node:18.10.0
+    container_name: hotel-crud
+    restart: always
+    depends_on:
+      - database
+    links:
+      - database
+    ports:
+      - 3000:3000
+    build: .
+    command: sh -c "npm run init && npm run start"
+    networks:
+      - default

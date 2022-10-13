@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "2957d364-fe1a-4ec1-b55c-6ea83976433c",
+		"name": "TuGerente - III - Delete Reservations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21161594"
+	},
+	"item": [
+		{
+			"name": "Just delete the last payed room",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rooms/6/free",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rooms",
+						"6",
+						"free"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get available rooms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rooms/availables",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rooms",
+						"availables"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
