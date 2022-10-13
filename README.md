@@ -7,6 +7,8 @@ Sí usted va a usar Docker, utilice el siguiente comando:
 Y esto le instalará y le cargará todo lo necesario para abrir un servidor
 web en el puerto 3000.
 
+Si no usa Docker, podrá utilizar los siguientes comandos:
+
 > npm run init
 
 Inserta datos iniciales en las tablas.
